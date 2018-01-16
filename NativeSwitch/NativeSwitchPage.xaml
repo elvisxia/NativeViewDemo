@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
+        xmlns:androidWrapper="clr-namespace:Xamarin.Forms.Platform.Android;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+		xmlns:androidWidget="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
+        xmlns:androidLocal="clr-namespace:NativeSwitch.Droid;assembly=NativeSwitch.Droid;targetPlatform=Android"
+		xmlns:formsAndroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+		xmlns:win="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows, Version=255.255.255.255, Culture=neutral, PublicKeyToken=null, ContentType=WindowsRuntime;targetPlatform=Windows"
+		xmlns:local="clr-namespace:NativeSwitch"
+		x:Class="NativeSwitch.NativeSwitchPage">
+    <StackLayout Margin="20">
+        <androidLocal:MyRadioGroup x:Arguments="{x:Static formsAndroid:Forms.Context}" >
+            <androidLocal:MyRadioGroup.ItemsSource>
+                <x:Array Type="{x:Type androidWrapper:NativeViewWrapper}">
+                    <androidWidget:RadioButton x:Arguments="{x:Static formsAndroid:Forms.Context}" Text="Scale1" />
+                    <androidWidget:RadioButton x:Arguments="{x:Static formsAndroid:Forms.Context}" Text="Scale2" />
+                    <androidWidget:RadioButton x:Arguments="{x:Static formsAndroid:Forms.Context}" Text="Scale3" />
+                    <androidWidget:RadioButton x:Arguments="{x:Static formsAndroid:Forms.Context}" Text="Scale4" />
+                </x:Array>
+            </androidLocal:MyRadioGroup.ItemsSource>
+        </androidLocal:MyRadioGroup>
+	</StackLayout>
+</ContentPage>
